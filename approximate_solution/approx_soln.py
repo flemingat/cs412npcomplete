@@ -1,11 +1,14 @@
 import random
 # Greedy algorithm for graph coloring
 # Time complexity: O(V^2)
+# Name: Lauren Hartley
 
 
 def main():
   adj_matrix = make_graph()
   n_col, c_map = greedy_color(adj_matrix)
+
+  # Print Output
   print(n_col)
   for v in c_map.keys():
     print(f'{v} {c_map[v]}')
