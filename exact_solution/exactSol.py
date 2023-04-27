@@ -67,7 +67,7 @@ def main():
 
     print(getColorCount(colorings))
     # print vertices in ascending order
-    for vertex in sorted_vertices:
+    for vertex in sortedVertices:
         color = colorings[vertex]
         print(vertex, color)
 
