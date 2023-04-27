@@ -59,8 +59,8 @@ def main():
             adjacencyList[adj].add(vertex)
 
     # sorting output so it is alphabetical/numerical so it is easier to read
-    sorted_vertices = sorted(adjacencyList.keys())
-    for vertex in sorted_vertices:
+    sortedVertices = sorted(adjacencyList.keys())
+    for vertex in sortedVertices:
         adjacencyList[vertex] = sorted(adjacencyList[vertex])
 
     colorings = allPossibleColorings(adjacencyList)
