@@ -1,6 +1,11 @@
 """
     name: Andrew Fleming
     
+    Sources:
+    https://www.interviewbit.com/blog/graph-coloring-problem/
+    https://martin-thoma.com/vertex-coloring/
+    https://www.scaler.com/topics/graph-coloring-problem/
+    https://www.geeksforgeeks.org/m-coloring-problem/
 """
 import itertools
 
