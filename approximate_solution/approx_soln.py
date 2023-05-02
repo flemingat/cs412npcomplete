@@ -10,7 +10,7 @@ def main():
 
   # Print Output
   print(n_col)
-  for v in c_map.keys():
+  for v in sorted(c_map.keys()):
     print(f'{v} {c_map[v]}')
   return n_col
 
