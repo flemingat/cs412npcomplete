@@ -43,7 +43,7 @@ def greedy_color(graph):
 
   # Color each vertex one by one
   for v in keys:
-    color = 1
+    color = 0
     adj_colors = set([color_map[i] for i in graph[v] if i in color_map])
     while color in adj_colors:
       color += 1
