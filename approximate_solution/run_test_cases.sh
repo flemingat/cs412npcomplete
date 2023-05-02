@@ -1,24 +1,5 @@
 #!/bin/bash 
 
-# Testing small graph with cycle
-
-# test_files=("8_graph_cycle.txt" "30_graph_cycle.txt" "bipartite_complete.txt" "crown.txt" "mc_vc_3col.graph.txt")
-# rm -rf ./tests/*.out
-
-# for file in "${test_files[@]}"
-# do
-#     echo "Running $file"
-
-#     # For timed test files, are bipartite complete graphs of varying sizes enough?
-
-#     # Right now its just running the test files
-#     # do you just output your stuff? How am i supposed to compare it?
-#     # with the exact soln code?
-#     # also, should i generate large test file randomly? How would I know
-#     # expected output?
-#     python33 approx_soln.py < "./tests/$file" >> "./tests/out/$file.out"
-# done
-
 echo "----------------------------------" | tee approx_soln_out.txt
 echo "2 Vertices Test" | tee -a approx_soln_out.txt
 echo "--------" | tee -a approx_soln_out.txt
@@ -56,3 +37,27 @@ echo "10 Vertices Test" | tee -a approx_soln_out.txt
 echo "--------" | tee -a approx_soln_out.txt
 time python3 <./tests/testVer10.txt approx_soln.py | tee -a approx_soln_out.txt
 echo "----------------------------------" | tee -a approx_soln_out.txt
+
+
+echo "" | tee -a approx_soln_out.txt
+echo "Run-time Tests" | tee -a approx_soln_out.txt
+echo "-------- Run-time Tests are only printed to console --------" | tee -a approx_soln_out.txt
+python3 timer.py
+echo "" | tee -a approx_soln_out.txt
+
+
+echo "----------------------------------" | tee -a approx_soln_out.txt
+echo "Variation Tests" | tee -a approx_soln_out.txt
+echo "--------" | tee -a approx_soln_out.txt
+echo "8 Edge / 6 Vertice Small Graph Test" | tee -a approx_soln_out.txt
+for num in {1..10}; do
+    echo "Run $num:" | tee -a approx_soln_out.txt
+    python3 < ./approx_tests/8_graph_cycle.txt approx_soln.py | tee -a approx_soln_out.txt
+done
+
+echo "--------" | tee -a approx_soln_out.txt
+echo "30 Edge / 20 Vertice Medium Graph Test" | tee -a approx_soln_out.txt
+for num in {1..10}; do
+    echo "Run $num:" | tee -a approx_soln_out.txt
+    python3 < ./approx_tests/30_graph_cycle.txt approx_soln.py | tee -a approx_soln_out.txt
+done
